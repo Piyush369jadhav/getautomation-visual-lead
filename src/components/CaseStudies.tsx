@@ -15,41 +15,29 @@ const CaseStudies = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <CaseStudyCard
             icon={<Building2 className="h-6 w-6" />}
-            company="TechCorp Enterprise"
-            industry="B2B SaaS"
+            company="Infinity Global Traders"
+            industry="Export Company"
             stats={[
-              { value: 245, suffix: "%", label: "Increase in qualified leads" },
-              { value: 18, suffix: "h", label: "Saved per week" },
-              { value: 3.2, suffix: "M", label: "Additional revenue" },
+              { value: 46, suffix: "k", label: "Recurring monthly orders" },
+              { value: 15, suffix: "h", label: "Saved per week" },
+              { value: 180, suffix: "%", label: "Growth in deals" },
             ]}
-            description="Automated their entire outbound sales process, resulting in 3x more meetings booked and 245% increase in qualified leads."
-          />
-
-          <CaseStudyCard
-            icon={<ShoppingBag className="h-6 w-6" />}
-            company="RetailMax"
-            industry="E-commerce"
-            stats={[
-              { value: 89, suffix: "%", label: "Customer satisfaction" },
-              { value: 12, suffix: "k", label: "Conversations per day" },
-              { value: 60, suffix: "%", label: "Cost reduction" },
-            ]}
-            description="Deployed AI agents to handle customer inquiries, achieving 89% satisfaction rate while reducing support costs by 60%."
+            description="Helped them land $46k recurring orders per month through automated lead qualification and follow-up systems."
           />
 
           <CaseStudyCard
             icon={<Rocket className="h-6 w-6" />}
-            company="GrowthLabs"
-            industry="Digital Marketing"
+            company="Catalyst Deal"
+            industry="B2B Sales"
             stats={[
-              { value: 340, suffix: "%", label: "ROI improvement" },
-              { value: 24, suffix: "/7", label: "Lead engagement" },
-              { value: 95, suffix: "%", label: "Response accuracy" },
+              { value: 28, suffix: "%", label: "Increase in conversions" },
+              { value: 20, suffix: "h", label: "Time saved weekly" },
+              { value: 95, suffix: "%", label: "Follow-up completion" },
             ]}
-            description="Transformed their lead generation with AI agents that engage prospects 24/7, increasing ROI by 340%."
+            description="Implemented an intelligent follow-up system that increased their conversion rate by 28% while saving 20 hours per week."
           />
         </div>
       </div>

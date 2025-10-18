@@ -163,14 +163,14 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
                     <div className="text-sm text-muted-foreground">Email</div>
-                    <div className="font-medium">hello@getautomation.com</div>
+                    <div className="font-medium">info@getautomationgo.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-5 w-5 text-primary" />
                   <div>
-                    <div className="text-sm text-muted-foreground">Response Time</div>
-                    <div className="font-medium">Within 24 hours</div>
+                    <div className="text-sm text-muted-foreground">Phone</div>
+                    <div className="font-medium">+91 9022848731</div>
                   </div>
                 </div>
               </div>
