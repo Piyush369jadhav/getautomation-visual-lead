@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "@/assets/Automation-removebg-preview (1).png";
+import logo from "@/assets/logo.png";
 
 const SplashScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
