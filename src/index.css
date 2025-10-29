@@ -82,3 +82,50 @@ All colors MUST be HSL.
     transform: scale(1.05);
   }
 }
+
+@keyframes splash-zoom {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes splash-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.splash-screen {
+  animation: splash-fade-out 0.5s ease-out 2.5s forwards;
+}
+
+.splash-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  animation: splash-zoom 2s ease-out forwards;
+  filter: drop-shadow(0 0 60px hsl(265 85% 58% / 0.6));
+}
+
+.logo-nav {
+  animation: none !important;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "@/assets/Untitled design.png";
+import logo from "@/assets/Automation-removebg-preview (1).png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,12 +21,12 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           <div className="flex items-center gap-2">
             <img
               src={logo}
               alt="Automation Logo"
-              className="h-16 w-16 object-contain transition-transform duration-300 hover:scale-110"
+              className="h-[200px] w-[200px] object-contain transition-transform duration-300 hover:scale-110 logo-nav"
             />
           </div>
 

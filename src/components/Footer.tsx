@@ -1,5 +1,5 @@
 import { Linkedin, Twitter, Github } from "lucide-react";
-import logo from "@/assets/Untitled design.png";
+import logo from "@/assets/Automation-removebg-preview (1).png";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Automation Logo"
-                className="h-12 w-12 object-contain"
+                className="h-16 w-16 object-contain"
               />
               <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 GetAutomation
