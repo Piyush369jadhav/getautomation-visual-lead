@@ -3,12 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import b2bImage from "@/assets/b2b-service.jpg";
 import b2cImage from "@/assets/b2c-service.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Services = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: card1Ref, isVisible: card1Visible } = useScrollAnimation();
+  const { ref: card2Ref, isVisible: card2Visible } = useScrollAnimation();
+
   return (
     <section className="py-24 px-4 relative" id="services">
       <div className="container mx-auto">
-        <div className="text-center space-y-4 mb-16 animate-fade-in">
+        <div
+          ref={titleRef as any}
+          className={`text-center space-y-4 mb-16 transition-all duration-1000 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Powerful AI Solutions
           </h2>
@@ -19,7 +29,12 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* B2B Sales AI */}
-          <Card className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(265_85%_58%/0.2)]">
+          <Card
+            ref={card1Ref as any}
+            className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-700 hover:shadow-[0_0_40px_hsl(265_85%_58%/0.2)] ${
+              card1Visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}
+          >
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={b2bImage} 
@@ -64,7 +79,12 @@ const Services = () => {
           </Card>
 
           {/* B2C AI Agents */}
-          <Card className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-secondary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(190_95%_50%/0.2)]">
+          <Card
+            ref={card2Ref as any}
+            className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-secondary/50 transition-all duration-700 hover:shadow-[0_0_40px_hsl(190_95%_50%/0.2)] ${
+              card2Visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}
+          >
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={b2cImage} 

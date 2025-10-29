@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Github } from "lucide-react";
+import logo from "@/assets/Untitled design.png";
 
 const Footer = () => {
   return (
@@ -6,9 +7,16 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              GetAutomation
-            </h3>
+            <div className="flex items-center gap-2">
+              <img
+                src={logo}
+                alt="Automation Logo"
+                className="h-12 w-12 object-contain"
+              />
+              <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                GetAutomation
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               Transform your business with cutting-edge AI automation solutions.
             </p>

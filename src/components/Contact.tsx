@@ -5,8 +5,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: formRef, isVisible: formVisible } = useScrollAnimation();
+  const { ref: bookingRef, isVisible: bookingVisible } = useScrollAnimation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,9 +38,14 @@ const Contact = () => {
   return (
     <section className="py-24 px-4 relative" id="contact">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(265_85%_58%/0.1)_0%,transparent_50%)]" />
-      
+
       <div className="container mx-auto relative z-10">
-        <div className="text-center space-y-4 mb-16 animate-fade-in">
+        <div
+          ref={titleRef as any}
+          className={`text-center space-y-4 mb-16 transition-all duration-1000 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Ready to Transform Your Business?
           </h2>
@@ -46,7 +56,12 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Contact Form */}
-          <Card className="bg-card/50 backdrop-blur-sm border-border/50 p-8">
+          <Card
+            ref={formRef as any}
+            className={`bg-card/50 backdrop-blur-sm border-border/50 p-8 transition-all duration-700 ${
+              formVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
@@ -120,7 +135,12 @@ const Contact = () => {
           </Card>
 
           {/* Booking Card */}
-          <div className="space-y-6">
+          <div
+            ref={bookingRef as any}
+            className={`space-y-6 transition-all duration-700 ${
+              bookingVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}
+          >
             <Card className="bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border-primary/50 p-8 space-y-6">
               <div className="space-y-2">
                 <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-accent w-fit">

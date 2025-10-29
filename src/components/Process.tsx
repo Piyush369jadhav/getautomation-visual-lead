@@ -1,6 +1,10 @@
 import { CheckCircle2, MessageSquare, Zap, Target, Rocket } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Process = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: stepsRef, isVisible: stepsVisible } = useScrollAnimation();
+
   const steps = [
     {
       icon: <MessageSquare className="h-6 w-6" />,
@@ -27,7 +31,12 @@ const Process = () => {
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto">
-        <div className="text-center space-y-4 mb-16 animate-fade-in">
+        <div
+          ref={titleRef as any}
+          className={`text-center space-y-4 mb-16 transition-all duration-1000 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             How We Work
           </h2>
@@ -36,7 +45,10 @@ const Process = () => {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div
+          ref={stepsRef as any}
+          className="relative max-w-5xl mx-auto"
+        >
           {/* Connection line */}
           <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-secondary" />
 
@@ -44,8 +56,10 @@ const Process = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="relative text-center space-y-4 animate-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className={`relative text-center space-y-4 transition-all duration-700 ${
+                  stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Icon */}
                 <div className="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground shadow-[0_0_30px_hsl(265_85%_58%/0.3)] z-10">
