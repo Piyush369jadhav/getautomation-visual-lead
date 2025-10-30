@@ -64,7 +64,7 @@ const BlogPreview = () => {
             <Card
               key={index}
               ref={cardRefs[index] as any}
-              className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-700 hover:shadow-[0_0_40px_hsl(265_85%_58%/0.2)] cursor-pointer ${
+              className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 hover:scale-105 hover:-translate-y-2 transition-all duration-700 hover:shadow-[0_0_60px_hsl(265_85%_58%/0.3)] cursor-pointer ${
                 cardVisibles[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >

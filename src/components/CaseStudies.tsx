@@ -83,7 +83,7 @@ const CaseStudyCard = ({ icon, company, industry, stats, description }: CaseStud
   return (
     <Card
       ref={cardRef}
-      className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(265_85%_58%/0.2)] p-8 space-y-6"
+      className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_60px_hsl(265_85%_58%/0.3)] cursor-pointer p-8 space-y-6"
     >
       <div className="flex items-start justify-between">
         <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 text-primary">

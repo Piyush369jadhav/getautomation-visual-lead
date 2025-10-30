@@ -26,8 +26,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Replace this URL with your Google Apps Script web app URL
-      const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxwa4seBrN8k-M3w0slavmf1HRtQzhLWaat8671K79twuFjLc9NxZI_c5bP0TdH_h2nQA/exec';
       
       const response = await fetch(scriptURL, {
         method: 'POST',
@@ -91,7 +90,7 @@ const Contact = () => {
           {/* Contact Form */}
           <Card
             ref={formRef as any}
-            className={`bg-card/50 backdrop-blur-sm border-border/50 p-8 transition-all duration-700 ${
+            className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 hover:shadow-[0_0_40px_hsl(265_85%_58%/0.2)] hover:scale-105 p-8 transition-all duration-700 ${
               formVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
@@ -159,11 +158,11 @@ const Contact = () => {
               <Button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
+                className="group w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 hover:scale-105 hover:shadow-[0_0_30px_hsl(265_85%_58%/0.4)] transition-all duration-300"
                 size="lg"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </form>
           </Card>
@@ -175,7 +174,7 @@ const Contact = () => {
               bookingVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
             }`}
           >
-            <Card className="bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border-primary/50 p-8 space-y-6">
+            <Card className="bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border-primary/50 hover:border-primary hover:shadow-[0_0_50px_hsl(265_85%_58%/0.3)] hover:scale-105 p-8 space-y-6 transition-all duration-500">
               <div className="space-y-2">
                 <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-accent w-fit">
                   <Calendar className="h-6 w-6 text-primary-foreground" />
@@ -203,10 +202,10 @@ const Contact = () => {
               </ul>
 
               <Button 
-                className="w-full bg-gradient-to-r from-secondary to-primary hover:opacity-90 transition-opacity"
+                className="group w-full bg-gradient-to-r from-secondary to-primary hover:opacity-90 hover:scale-105 hover:shadow-[0_0_30px_hsl(190_95%_50%/0.4)] transition-all duration-300"
                 size="lg"
               >
-                <Calendar className="mr-2 h-4 w-4" />
+                <Calendar className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
                 Schedule Demo Call
               </Button>
             </Card>

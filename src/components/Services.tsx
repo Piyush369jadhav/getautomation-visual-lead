@@ -31,7 +31,7 @@ const Services = () => {
           {/* B2B Sales AI */}
           <Card
             ref={card1Ref as any}
-            className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-700 hover:shadow-[0_0_40px_hsl(265_85%_58%/0.2)] ${
+            className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 hover:scale-105 hover:-translate-y-2 transition-all duration-700 hover:shadow-[0_0_60px_hsl(265_85%_58%/0.3)] ${
               card1Visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
@@ -86,7 +86,7 @@ const Services = () => {
           {/* B2C AI Agents */}
           <Card
             ref={card2Ref as any}
-            className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-secondary/50 transition-all duration-700 hover:shadow-[0_0_40px_hsl(190_95%_50%/0.2)] ${
+            className={`group relative overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-secondary/50 hover:scale-105 hover:-translate-y-2 transition-all duration-700 hover:shadow-[0_0_60px_hsl(190_95%_50%/0.3)] ${
               card2Visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
             }`}
           >

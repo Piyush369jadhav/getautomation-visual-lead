@@ -56,15 +56,15 @@ const Process = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`relative text-center space-y-4 transition-all duration-700 ${
+                className={`group relative text-center space-y-4 transition-all duration-700 hover:scale-110 hover:-translate-y-2 cursor-pointer ${
                   stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Icon */}
-                <div className="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground shadow-[0_0_30px_hsl(265_85%_58%/0.3)] z-10">
+                <div className="relative mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground shadow-[0_0_30px_hsl(265_85%_58%/0.3)] group-hover:shadow-[0_0_50px_hsl(265_85%_58%/0.5)] group-hover:rotate-12 transition-all duration-500 z-10">
                   {step.icon}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs font-bold text-secondary-foreground">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs font-bold text-secondary-foreground group-hover:scale-125 transition-transform">
                     {index + 1}
                   </div>
                 </div>

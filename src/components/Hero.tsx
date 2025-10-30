@@ -41,7 +41,7 @@ const Hero = () => {
           <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all hover:scale-105 text-lg px-8 py-6 rounded-xl shadow-[0_0_40px_hsl(265_85%_58%/0.3)] hover:shadow-[0_0_60px_hsl(265_85%_58%/0.5)]"
+              className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all hover:scale-105 text-lg px-8 py-6 rounded-xl shadow-[0_0_40px_hsl(265_85%_58%/0.3)] hover:shadow-[0_0_60px_hsl(265_85%_58%/0.5)]"
             >
               Start Free Trial
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -49,9 +49,9 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
+              className="group border-2 border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
             >
-              <Play className="mr-2 h-5 w-5" />
+              <Play className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
               Watch Demo
             </Button>
           </div>
