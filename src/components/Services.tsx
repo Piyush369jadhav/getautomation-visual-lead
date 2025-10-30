@@ -71,9 +71,14 @@ const Services = () => {
                 ))}
               </ul>
 
-              <Button className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity group">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button 
+                asChild
+                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity group"
+              >
+                <a href="#contact">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </div>
           </Card>
@@ -121,9 +126,14 @@ const Services = () => {
                 ))}
               </ul>
 
-              <Button className="w-full bg-gradient-to-r from-secondary to-primary hover:opacity-90 transition-opacity group">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button 
+                asChild
+                className="w-full bg-gradient-to-r from-secondary to-primary hover:opacity-90 transition-opacity group"
+              >
+                <a href="#contact">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </div>
           </Card>

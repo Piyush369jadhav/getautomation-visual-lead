@@ -19,13 +19,46 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Replace this URL with your Google Apps Script web app URL
+      const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+      
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -125,10 +158,11 @@ const Contact = () => {
 
               <Button 
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
                 size="lg"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </form>

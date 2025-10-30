@@ -14,7 +14,7 @@ const Footer = () => {
                 className="h-16 w-16 object-contain"
               />
               <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                GetAutomation
+                Automation.go
               </h3>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} GetAutomation. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Automation.go. All rights reserved.</p>
         </div>
       </div>
     </footer>
